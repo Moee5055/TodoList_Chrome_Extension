@@ -15,6 +15,11 @@ function App() {
     }]);
   };
 
+  const handleDeleteTodo = (id: string) => {
+      const updateTodo = todos.filter(todo => todo.id != id)
+      setTodos(updateTodo)
+  }
+
   const toggleTodo = (id: string) => {
     setTodos(todos.map(todo =>
       todo.id === id ? { ...todo, completed: !todo.completed } : todo
@@ -56,6 +61,7 @@ function App() {
             <TodoItem
               key={todo.id}
               todo={todo}
+              onDelete={() => handleDeleteTodo(todo.id)}
               onToggle={() => toggleTodo(todo.id)}
               onUpdate={(text) => updateTodoText(todo.id, text)}
               onMoveUp={() => moveTodoUp(index)}

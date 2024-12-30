@@ -1,9 +1,10 @@
 import React, { useState, KeyboardEvent } from 'react';
 import { ArrowUp, ArrowDown } from 'lucide-react';
 import { Todo } from '../types/todo.ts';
-
+import { Trash } from 'lucide-react';
 interface TodoItemProps {
   todo: Todo;
+  onDelete: () => void;
   onToggle: () => void;
   onUpdate: (text: string) => void;
   onMoveUp: () => void;
@@ -15,6 +16,7 @@ interface TodoItemProps {
 export const TodoItem: React.FC<TodoItemProps> = ({
   todo,
   onToggle,
+  onDelete,
   onUpdate,
   onMoveUp,
   onMoveDown,
@@ -86,6 +88,10 @@ export const TodoItem: React.FC<TodoItemProps> = ({
           title="Move down"
         >
           <ArrowDown size={16} />
+        </button>
+        <button
+          onClick={onDelete}>
+          <Trash size={16} className='hover:stroke-red-500'/>
         </button>
       </div>
     </div>
