@@ -19,6 +19,10 @@ export default defineConfig({
           src: 'content.js',
           dest: '.', // Copy to the root of the 'dist' folder
         },
+        {
+          src: 'icons/*', // Copy all files inside the 'icons' folder
+          dest: 'icons', // Copy to 'dist/icons'
+        },
       ],
     }),
   ],
@@ -26,11 +30,11 @@ export default defineConfig({
     outDir: 'dist',
     rollupOptions: {
       input: {
-        main: './index.html', // Main entry file
-        content: './content.js', // Include content.js in the input
+        main: './index.html',
+        content: './content.js',
       },
       output: {
-        entryFileNames: '[name].js', // Use filename as the entry name
+        entryFileNames: '[name].js',
       },
     },
   },
