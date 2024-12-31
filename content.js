@@ -1,4 +1,3 @@
-// Create floating button container
 const floatingContainer = document.createElement('div');
 floatingContainer.id = 'todo-extension-container';
 floatingContainer.innerHTML = `
@@ -19,11 +18,19 @@ floatingContainer.innerHTML = `
 
 document.body.appendChild(floatingContainer);
 
-// Add click handler
 const button = document.getElementById('todo-extension-button');
 const iframe = document.getElementById('todo-extension-iframe');
-let isOpen = false;
 
+iframe.setAttribute(
+  'sandbox',
+  'allow-scripts allow-same-origin allow-popups allow-forms allow-modals'
+);
+iframe.setAttribute(
+  'allow',
+  'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'
+);
+
+let isOpen = false;
 button.addEventListener('click', () => {
   isOpen = !isOpen;
   iframe.style.display = isOpen ? 'block' : 'none';
