@@ -37,8 +37,9 @@ iframe.setAttribute('referrerpolicy', 'no-referrer');
 
 // Match iframe dimensions with popup styling
 iframe.style.width = '450px'; // Match the width from index.html
-iframe.style.height = '600px'; // Match the max-height from index.html
+iframe.style.height = '500px'; // Match the max-height from index.html
 iframe.style.overflow = 'hidden';
+iframe.style.backgroundColor = 'rgb(25,25,25)';
 
 let isOpen = false;
 button.addEventListener('click', () => {

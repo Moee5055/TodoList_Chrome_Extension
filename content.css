@@ -35,7 +35,6 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: none;
   z-index: 10001;
-  background-color: rgb(25,25,25);
   overflow-y: auto;
   transition: opacity 0.2s ease;
   opacity: 0;
