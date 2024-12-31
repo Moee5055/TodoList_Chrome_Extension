@@ -71,11 +71,10 @@ useEffect(() => {
 
   return (
     <div className="bg-gray-900 text-white p-8">
-      <div >
-        <h1 className="text-3xl font-bold mb-6">Just Do It:	<ClipboardCheck size={16}/></h1>
+      <div>
         <TodoInput onAdd={addTodo} />
         <div className='flex justify-between items-center pr-2 mb-4'>
-          <h2 className="text-xl font-bold">Today Tasks</h2>
+          <h2 className="text-xl font-bold">TODO <ClipboardCheck /></h2>
           <button
             className="px-2 py-1 bg-red-500 text-white font-semibold rounded-lg shadow-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 transition duration-300" onClick={() => {
               setTodos([])
