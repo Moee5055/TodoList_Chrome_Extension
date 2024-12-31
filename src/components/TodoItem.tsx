@@ -45,7 +45,7 @@ export const TodoItem: React.FC<TodoItemProps> = ({
   };
 
   return (
-    <div className={`flex items-center gap-3 py-2 px-4 rounded-lg hover:bg-gray-800 group transition-colors ${todo.completed ? 'bg-opacity-50' : ''}`}>
+    <div className={`flex items-center gap-3 py-2 px-4 rounded-lg text-[16px] hover:bg-gray-800 group transition-colors ${todo.completed ? 'bg-opacity-50' : ''}`}>
       <input
         type="checkbox"
         checked={todo.completed}

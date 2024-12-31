@@ -11,9 +11,11 @@ floatingContainer.innerHTML = `
       <line x1="3" y1="18" x2="3.01" y2="18"></line>
     </svg>
   </div>
-  <iframe id="todo-extension-iframe" src="${chrome.runtime.getURL(
-    'index.html'
-  )}" style="display: none;"></iframe>
+  <iframe
+    id="todo-extension-iframe"
+    src="${chrome.runtime.getURL('index.html')}"
+    style="display: none;"
+  ></iframe>
 `;
 
 document.body.appendChild(floatingContainer);
@@ -21,6 +23,7 @@ document.body.appendChild(floatingContainer);
 const button = document.getElementById('todo-extension-button');
 const iframe = document.getElementById('todo-extension-iframe');
 
+// Update iframe attributes for security and proper styling
 iframe.setAttribute(
   'sandbox',
   'allow-scripts allow-same-origin allow-popups allow-forms allow-modals allow-downloads'
@@ -31,6 +34,12 @@ iframe.setAttribute(
 );
 iframe.setAttribute('security', 'restricted');
 iframe.setAttribute('referrerpolicy', 'no-referrer');
+
+// Match iframe dimensions with popup styling
+iframe.style.width = '450px'; // Match the width from index.html
+iframe.style.height = '600px'; // Match the max-height from index.html
+iframe.style.backgroundColor = '#ffffff';
+iframe.style.overflow = 'hidden';
 
 let isOpen = false;
 button.addEventListener('click', () => {
