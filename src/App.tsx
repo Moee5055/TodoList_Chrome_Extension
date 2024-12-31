@@ -3,6 +3,7 @@ import { TodoItem } from './components/TodoItem.tsx';
 import { TodoInput } from './components/TodoInput';
 import { Todo } from './types/todo.ts';
 import { saveTodosToStorage } from './utils/saveTodoToChromeStorage.ts';
+import {ClipboardCheck} from 'lucide-react'
 
 function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
@@ -71,8 +72,7 @@ useEffect(() => {
   return (
     <div className="bg-gray-900 text-white p-8">
       <div >
-        <h1 className="text-3xl font-bold mb-6">To-Do List</h1>
-
+        <h1 className="text-3xl font-bold mb-6">Just Do It:	<ClipboardCheck size={16}/></h1>
         <TodoInput onAdd={addTodo} />
         <div className='flex justify-between items-center pr-2 mb-4'>
           <h2 className="text-xl font-bold">Today Tasks</h2>

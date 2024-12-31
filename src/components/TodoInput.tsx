@@ -22,7 +22,7 @@ export const TodoInput: React.FC<TodoInputProps> = ({ onAdd }) => {
         value={newTask}
         onChange={(e) => setNewTask(e.target.value)}
         placeholder="Add new task..."
-        className="w-full bg-transparent border-b border-gray-700 py-2 text-gray-300 focus:outline-none focus:border-gray-500"
+        className="w-full bg-transparent border-b border-gray-700 py-2 text-gray-300 focus:outline-none focus:border-gray-500 text-[16px] caret-green-500"
       />
     </form>
   );
