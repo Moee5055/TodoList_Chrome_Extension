@@ -20,20 +20,25 @@ function App() {
   };
 
   const handleDeleteTodo = (id: string) => {
-      const updateTodo = todos.filter(todo => todo.id != id)
-      setTodos(updateTodo)
-  }
+    const updatedTodos = todos.filter(todo => todo.id !== id);
+    setTodos(updatedTodos);
+    saveTodosToStorage(updatedTodos);
+  };
 
   const toggleTodo = (id: string) => {
-    setTodos(todos.map(todo =>
+    const updatedTodos = todos.map(todo =>
       todo.id === id ? { ...todo, completed: !todo.completed } : todo
-    ));
+    );
+    setTodos(updatedTodos);
+    saveTodosToStorage(updatedTodos);
   };
 
   const updateTodoText = (id: string, text: string) => {
-    setTodos(todos.map(todo =>
+    const updatedTodos = todos.map(todo =>
       todo.id === id ? { ...todo, text } : todo
-    ));
+    );
+    setTodos(updatedTodos);
+    saveTodosToStorage(updatedTodos);
   };
 
   const moveTodoUp = (index: number) => {
@@ -41,6 +46,7 @@ function App() {
       const newTodos = [...todos];
       [newTodos[index], newTodos[index - 1]] = [newTodos[index - 1], newTodos[index]];
       setTodos(newTodos);
+      saveTodosToStorage(newTodos);
     }
   };
 
@@ -49,6 +55,7 @@ function App() {
       const newTodos = [...todos];
       [newTodos[index], newTodos[index + 1]] = [newTodos[index + 1], newTodos[index]];
       setTodos(newTodos);
+      saveTodosToStorage(newTodos);
     }
   };
 
