@@ -2,17 +2,21 @@ import { useState } from 'react';
 import { TodoItem } from './components/TodoItem.tsx';
 import { TodoInput } from './components/TodoInput';
 import { Todo } from './types/todo.ts';
+import { saveTodosToStorage } from './utils/saveTodoToChromeStorage.ts';
 
 function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
 
   const addTodo = (text: string) => {
-    setTodos([...todos, {
+    const newTodo = {
       id: crypto.randomUUID(),
       text,
       completed: false,
       order: todos.length
-    }]);
+    };
+    const updatedTodos = [...todos, newTodo];
+    setTodos(updatedTodos);
+    saveTodosToStorage(updatedTodos);
   };
 
   const handleDeleteTodo = (id: string) => {
