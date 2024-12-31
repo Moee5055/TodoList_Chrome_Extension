@@ -23,12 +23,14 @@ const iframe = document.getElementById('todo-extension-iframe');
 
 iframe.setAttribute(
   'sandbox',
-  'allow-scripts allow-same-origin allow-popups allow-forms allow-modals'
+  'allow-scripts allow-same-origin allow-popups allow-forms allow-modals allow-downloads'
 );
 iframe.setAttribute(
   'allow',
   'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'
 );
+iframe.setAttribute('security', 'restricted');
+iframe.setAttribute('referrerpolicy', 'no-referrer');
 
 let isOpen = false;
 button.addEventListener('click', () => {

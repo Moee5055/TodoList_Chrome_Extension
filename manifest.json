@@ -34,5 +34,10 @@
       "js": ["content.js"],
       "css": ["content.css"]
     }
-  ]
+  ],
+
+  "web_accessible_resources": [{
+    "resources": ["index.html"],
+    "matches": ["<all_urls>"]
+  }]
 }
