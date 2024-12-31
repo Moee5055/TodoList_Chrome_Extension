@@ -30,18 +30,16 @@
   bottom: 80px;
   right: 20px;
   width: 450px;
-  height: auto;
-  min-height: 200px;
-  max-height: calc(100vh - 100px);
   border: none;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: none;
   z-index: 10001;
-  background-color: #ffffff;
+  background-color: rgb(25,25,25);
   overflow-y: auto;
   transition: opacity 0.2s ease;
   opacity: 0;
+  scrollbar-width: thin;
 }
 
 #todo-extension-iframe[style*="display: block"] {
